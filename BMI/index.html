@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI calculator</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <h1>Hello! I am here to help you calculate ur <span class="Highlight">Body Mass Index</span> and assess your
+        body's overall health!</h1>
+    <div>
+        <a class="Table" href="#BMI">BMI table</a>
+    </div>
+    <div class="BMI">
+        <h2> To begin please enter ur details below.</h2>
+        <label for="height">Height:</label>
+        <input type="number" id= "height" style="width: 250px;" step="0.1" name="height" placeholder="Enter your height(cm) to 2 decimal place"><br><br>
+
+        <label for="weight">Weight:</label>
+        <input type="number" id= "weight" style="width: 250px;" step="0.1" name="weight" placeholder="Enter your weight(kg) to 2 decimal place"><br><br>
+   
+        <button onclick="calculateBMI()">Calculate BMI</button><br><br>
+
+        <p id="bmi-result"></p>
+
+    </div>
+
+    <img src="images/BMI.png" alt="BMI table" id="BMI">
+
+<script>
+  function calculateBMI() {
+    const height = parseFloat(document.getElementById("height").value);
+    const weight = parseFloat(document.getElementById("weight").value);
+    const result = document.getElementById("bmi-result");
+
+    // Validate input
+    if (isNaN(height) || isNaN(weight) || height <= 0 || weight <= 0) {
+      result.textContent = "Please enter valid height and weight.";
+      return;
+    }
+
+    // Convert height from cm to meters
+    const heightInMeters = height / 100;
+
+    // Calculate BMI
+    const bmi = weight / (heightInMeters ** 2);
+
+    // Show result rounded to 2 decimal places
+    result.textContent = `Your BMI is ${bmi.toFixed(2)}.`;
+  }
+</script>
+</body>
+
+</html>

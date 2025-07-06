@@ -1,0 +1,36 @@
+.Highlight{
+    color: aqua;
+}
+
+body {
+  background-image: url("../images/bodybg.jpg");
+  background-size: cover;         /* Scale image to fill the screen */
+  background-repeat: no-repeat;   /* Prevent tiling */
+  background-position: center;    /* Center the image */
+  background-attachment: fixed;   /* Optional: lock background */
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+}
+
+.BMI {
+    text-align: center;
+}
+
+.Table {
+    display: block;
+    text-align: right;
+    font-size: 18px;
+}
+
+#BMI {
+  display: block;
+  transform: scale(0.7); /* 1.0 = original size */
+  margin-left: auto;
+  margin-right: auto;
+}
